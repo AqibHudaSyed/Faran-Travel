@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - Faran Tours & Travels | Visa, Passport, Attestation Lucknow</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230d1f3c'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' dominant-baseline='middle' dy='0.1em'>✈️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--navy:#0d1f3c;--navy-light:#162b52;--gold:#c9963a;--gold-light:#e8b84b;--off-white:#f8f5f0;--text-dark:#1a1a2e;--text-muted:#6b7280;--green:#1a6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,31,60,0.97);backdrop-filter:blur(10px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:2px solid rgba(201,150,58,0.3);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:contain;flex-shrink:0;background:white;padding:4px;box-shadow:0 0 0 2px rgba(201,150,58,0.4);}
+.social-links{display:flex;gap:12px;margin-top:16px;}
+.social-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.25s;}
+.social-btn.fb{background:#1877F2;color:white;}
+.social-btn.fb:hover{background:#0d6efd;}
+.social-btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}
+.social-btn.ig:hover{opacity:0.85;}
+.logo-text strong{display:block;font-family:'Playfair Display',serif;font-size:16px;color:var(--gold-light);}
+.logo-text span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light);}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 20px;border-radius:4px;font-weight:600!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:white;border-radius:2px;}
+
+.page-hero{background:linear-gradient(135deg,var(--navy),#1a3a6e);padding:120px 5% 60px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,var(--off-white));}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:white;margin-bottom:16px;}
+.page-hero h1 span{color:var(--gold-light);}
+.page-hero p{color:rgba(255,255,255,0.7);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7;}
+
+section{padding:80px 5%;}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.section-subtitle{color:var(--text-muted);font-size:15px;line-height:1.7;max-width:540px;}
+.section-header{margin-bottom:52px;}
+
+/* SERVICE SECTIONS floating */
+.svc-section{padding:72px 5%;}
+.svc-section:nth-child(odd){background:white;}
+.svc-section:nth-child(even){background:var(--off-white);}
+.svc-float{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.svc-float.reverse{direction:rtl;}
+.svc-float.reverse>*{direction:ltr;}
+
+.svc-visual{border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12);}
+.svc-visual-inner{padding:48px 36px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:380px;}
+.svc-visual-inner.navy{background:linear-gradient(135deg,var(--navy),var(--navy-light));}
+.svc-visual-inner.green{background:linear-gradient(135deg,#1a6b3a,#0f4a28);}
+.svc-visual-inner.gold{background:linear-gradient(135deg,#8B6914,#c9963a);}
+.svc-visual-inner.red{background:linear-gradient(135deg,#8B1A1A,#5c1010);}
+.svc-visual-inner.blue{background:linear-gradient(135deg,#1a3a6e,#0d2550);}
+.svc-big-icon{font-size:80px;margin-bottom:20px;}
+.svc-visual-inner h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:12px;}
+.svc-visual-inner p{color:rgba(255,255,255,0.7);font-size:14px;line-height:1.6;}
+.svc-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;}
+.svc-pill{background:rgba(255,255,255,0.15);color:white;padding:4px 12px;border-radius:20px;font-size:12px;}
+
+.svc-content{}
+.svc-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,150,58,0.12);border:1px solid rgba(201,150,58,0.3);color:var(--gold);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:16px;}
+.svc-content h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
+.svc-content p{color:var(--text-muted);font-size:15px;line-height:1.75;margin-bottom:20px;}
+.svc-list{list-style:none;margin-bottom:28px;display:flex;flex-direction:column;gap:10px;}
+.svc-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-dark);}
+.svc-list li::before{content:'✓';width:20px;height:20px;background:rgba(26,107,58,0.12);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.svc-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.25s;box-shadow:0 6px 20px rgba(201,150,58,0.25);}
+.svc-cta:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--gold);padding:48px 5%;}
+.cs-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+.cs-inner h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);}
+.cs-inner p{color:rgba(13,31,60,0.75);margin-top:6px;font-size:15px;}
+.cs-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-navy{background:var(--navy);color:white;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
+.btn-navy:hover{background:var(--navy-light);transform:translateY(-2px);}
+.btn-wa{background:#25D366;color:white;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
+.btn-wa:hover{background:#1eb859;transform:translateY(-2px);}
+footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;border-top:3px solid var(--gold);}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand p{font-size:14px;line-height:1.7;margin-top:16px;margin-bottom:12px;max-width:280px;}
+.tagline{font-style:italic;color:var(--gold-light);font-size:13px;}
+.footer-col h4{color:var(--gold-light);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid rgba(201,150,58,0.3);}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:color 0.2s;display:flex;align-items:center;gap:8px;}
+.footer-col ul li a:hover{color:var(--gold-light);}
+.footer-col ul li a::before{content:'→';font-size:12px;color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;}
+.footer-bottom span{color:var(--gold);font-weight:600;}
+.float-wa{position:fixed;bottom:28px;right:28px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.5);z-index:999;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.5);}50%{box-shadow:0 6px 30px rgba(37,211,102,0.8);}}
+@media(max-width:768px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:var(--navy);padding:24px;gap:20px;z-index:999;border-bottom:2px solid rgba(201,150,58,0.3);}
+  .svc-float,.svc-float.reverse{grid-template-columns:1fr;direction:ltr;}
+  .svc-section{padding:60px 4%;}
+  section{padding:60px 4%;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .footer-bottom,.cs-inner{flex-direction:column;text-align:center;}
+}
+#goToTopBtn {
+  position: fixed;
+  bottom: 95px; /* Floating WhatsApp se upar */
+  right: 28px;
+  z-index: 1000;
+  
+  /* Solid Dark Circle Look जो clear dikhega */
+  background-color: #0d1f3c; 
+  border: none;
+  width: 46px; 
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  /* 👑 ALIGNMENT FIX (Isse icon bilkul center mein lock ho jayega) */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  
+  /* Initial Hidden State */
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Jab user 80% bottom mein jayega tab ye class active hogi */
+#goToTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Hover Effect (Jab mouse upar jaye) */
+#goToTopBtn:hover {
+  background-color: #c9963a; /* Circle gold ho jayega */
+  transform: translateY(-4px) scale(1.05); /* Smooth lift effect */
+}
+
+#goToTopBtn:hover svg path {
+  stroke: #0d1f3c; /* Arrow navy blue ho jayega contrast ke liye */
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/919235011113" target="_blank" class="float-wa"><img src="whatsapp.png" alt="WhatsApp" style="width:34px;height:34px;object-fit:contain;"></a>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Faran Tours Logo" class="logo-img">
+    <div class="logo-text">
+      <strong>Faran Tours & Travels</strong>
+      <span>Travel Advisor & Tour Organiser</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <h1>Our <span>Services</span></h1>
+  <p>From Hajj & Umrah to Visa, Passport, Attestation and Emigration — Faran Tours is your complete travel solution in Lucknow.</p>
+</div>
+
+<!-- VISA SERVICES -->
+<div class="svc-section">
+  <div class="svc-float">
+    <div class="svc-visual">
+      <div class="svc-visual-inner navy">
+        <div class="svc-big-icon">🛂</div>
+        <h3>Visa Services</h3>
+        <p>UAE · Oman · Saudi · Qatar · Kuwait · Bahrain & All Countries</p>
+        <div class="svc-pills">
+          <span class="svc-pill">Express 24hr</span>
+          <span class="svc-pill">Instant 2-4hr</span>
+          <span class="svc-pill">100% Genuine</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-content">
+      <div class="svc-tag">🛂 Fast & Reliable</div>
+      <h2>International Visa Services</h2>
+      <p>We provide fast, reliable, and hassle-free visa services for all major international destinations. Our expert team ensures smooth processing with complete documentation support.</p>
+      <ul class="svc-list">
+        <li>UAE Visa — Express (24 hrs) & Instant (2-4 hrs) options available</li>
+        <li>Oman Visa — 10, 30 & 90 day visas for tourism and business</li>
+        <li>Saudi Arabia — Umrah, Work & Visit Visa</li>
+        <li>Qatar, Kuwait & Bahrain Visa processing</li>
+        <li>All European Union Countries</li>
+        <li>Complete document guidance & submission support</li>
+        <li>Quick Processing · Safe & Reliable · Expert Support · Best Price</li>
+      </ul>
+      <a href="https://wa.me/919235011113?text=I need Visa assistance" target="_blank" class="svc-cta">💬 Apply for Visa</a>
+    </div>
+  </div>
+</div>
+
+<!-- PASSPORT -->
+<div class="svc-section">
+  <div class="svc-float reverse">
+    <div class="svc-visual">
+      <div class="svc-visual-inner green">
+        <div class="svc-big-icon">📘</div>
+        <h3>Passport Services</h3>
+        <p>Fresh · Renewal · Lost · Damaged</p>
+        <div class="svc-pills">
+          <span class="svc-pill">Quick Processing</span>
+          <span class="svc-pill">Expert Support</span>
+          <span class="svc-pill">Safe & Secure</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-content">
+      <div class="svc-tag">📘 All Types Covered</div>
+      <h2>Passport Assistance</h2>
+      <p>Complete passport services for fresh applications, renewals, and lost or damaged passport replacements. We handle all documentation and guide you through every step of the process.</p>
+      <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Documents for Fresh Passport (Adults):</p>
+      <ul class="svc-list">
+        <li>High School Marksheet + Certificate</li>
+        <li>Aadhar Card</li>
+        <li>PAN Card / Bank Passbook</li>
+        <li>Voter ID</li>
+      </ul>
+      <p style="font-weight:600;color:var(--navy);margin-bottom:8px;">Documents for Renewal Passport (Adults):</p>
+      <ul class="svc-list">
+        <li>Old Passport</li>
+        <li>High School Marksheet + Certificate</li>
+        <li>Aadhar Card · PAN Card · Voter ID</li>
+      </ul>
+      <a href="https://wa.me/919235011113?text=I need Passport assistance" target="_blank" class="svc-cta">💬 Get Passport Help</a>
+    </div>
+  </div>
+</div>
+
+<!-- ATTESTATION -->
+<div class="svc-section">
+  <div class="svc-float">
+    <div class="svc-visual">
+      <div class="svc-visual-inner gold">
+        <div class="svc-big-icon">📜</div>
+        <h3>Certificate Attestation</h3>
+        <p>MEA · Apostille · All GCC & EU Countries</p>
+        <div class="svc-pills">
+          <span class="svc-pill">Educational</span>
+          <span class="svc-pill">Marriage</span>
+          <span class="svc-pill">Birth</span>
+          <span class="svc-pill">Commercial</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-content">
+      <div class="svc-tag">📜 MEA & Apostille</div>
+      <h2>Certificate Attestation</h2>
+      <p>We provide complete certificate attestation services for Saudi Arabia, UAE, Oman, Qatar, Kuwait, Bahrain, and all European Union countries.</p>
+      <ul class="svc-list">
+        <li>All Educational Certificates (Degrees, Diplomas, Marksheets)</li>
+        <li>Marriage, Birth & Vaccination Certificates</li>
+        <li>MEA (Ministry of External Affairs) Attestation</li>
+        <li>Apostille for EU Countries</li>
+        <li>Power of Attorney & Medical Certificate</li>
+        <li>Commercial & Non-Commercial Document Attestation</li>
+        <li>Fast, Reliable & Hassle-Free — We make it simple</li>
+      </ul>
+      <a href="https://wa.me/919235011113?text=I need Certificate Attestation services" target="_blank" class="svc-cta">💬 Get Attestation Help</a>
+    </div>
+  </div>
+</div>
+
+<!-- EMIGRATION -->
+<div class="svc-section">
+  <div class="svc-float reverse">
+    <div class="svc-visual">
+      <div class="svc-visual-inner blue">
+        <div class="svc-big-icon">🌍</div>
+        <h3>Emigration Services</h3>
+        <p>Kuwait · Qatar · Saudi · Dubai · Bahrain · Oman</p>
+        <div class="svc-pills">
+          <span class="svc-pill">End-to-End Support</span>
+          <span class="svc-pill">Expert Guidance</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-content">
+      <div class="svc-tag">🌍 Your Dream. Our Expertise.</div>
+      <h2>Emigration Services</h2>
+      <p>We provide complete guidance and support to make your emigration process smooth, easy and successful. From visa to landing — we are with you every step of the way.</p>
+      <ul class="svc-list">
+        <li>Visa Processing for all GCC countries</li>
+        <li>Passport Assistance & renewal</li>
+        <li>Document Verification & Attestation</li>
+        <li>Flight Ticketing</li>
+        <li>Accommodation Assistance</li>
+        <li>Pre-Departure Counseling</li>
+        <li>End-to-End Emigration Support</li>
+      </ul>
+      <p style="background:rgba(201,150,58,0.1);border-left:3px solid var(--gold);padding:14px;border-radius:0 8px 8px 0;font-size:13px;color:var(--text-dark);">
+        <strong>Destinations:</strong> Saudi Arabia, UAE/Dubai, Kuwait, Qatar, Bahrain, Oman
+      </p>
+      <a href="https://wa.me/919235011113?text=I need Emigration services assistance" target="_blank" class="svc-cta" style="margin-top:16px;">💬 Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- AIR TICKETS -->
+<div class="svc-section">
+  <div class="svc-float">
+    <div class="svc-visual">
+      <div class="svc-visual-inner red">
+        <div class="svc-big-icon">✈️</div>
+        <h3>Air Tickets & Hotels</h3>
+        <p>Domestic & International · Best Price Guaranteed</p>
+        <div class="svc-pills">
+          <span class="svc-pill">All Airlines</span>
+          <span class="svc-pill">Best Rates</span>
+          <span class="svc-pill">Worldwide Hotels</span>
+        </div>
+      </div>
+    </div>
+    <div class="svc-content">
+      <div class="svc-tag">✈️ Best Price Guaranteed</div>
+      <h2>Air Tickets & Hotel Bookings</h2>
+      <p>Get the best deals on domestic and international air tickets and hotel bookings worldwide. Our IATA certification ensures you get authentic tickets at the best available prices.</p>
+      <ul class="svc-list">
+        <li>All domestic & international airlines</li>
+        <li>Group bookings at special rates</li>
+        <li>Hotel bookings worldwide</li>
+        <li>Holiday & Honeymoon packages</li>
+        <li>Insurance for all travel</li>
+        <li>IATA certified — 100% authentic tickets</li>
+      </ul>
+      <a href="https://wa.me/919235011113?text=I need Air Ticket or Hotel booking help" target="_blank" class="svc-cta">💬 Book Tickets Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="cs-inner">
+    <div>
+      <h2>Need Any of These Services?</h2>
+      <p>Call or WhatsApp — we respond immediately!</p>
+    </div>
+    <div class="cs-btns">
+      <a href="tel:+919235011113" class="btn-navy">📞 +91 9235011113</a>
+      <a href="https://wa.me/919235011113" target="_blank" class="btn-wa">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="logo.png" style="width:48px;height:48px;border-radius:50%;object-fit:contain;background:white;padding:4px;box-shadow:0 0 0 2px rgba(201,150,58,0.4);" alt="logo">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold-light);">Faran Tours & Travels</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;">TRAVEL ADVISOR & TOUR ORGANISER</div>
+        </div>
+      </div>
+      <p>Complete solution for all your travel queries. Trusted since 1980.</p>
+      <span class="tagline">"Your Journey, Our Responsibility"</span>
+	  <!-- SOCIAL MEDIA LINKS -->
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/p/1KgosCVPYy/" target="_blank" class="social-btn fb">📘 Facebook</a>
+        <a href="https://www.instagram.com/farantourandtravels?utm_source=qr&igsh=MXVhaDN6ZXNlcjJ2aw%3D%3D" target="_blank" class="social-btn ig">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919235011113">+91 9235011113</a></li>
+        <li><a href="tel:+919044111170">+91 9621215786</a></li>
+        <li><a href="tel:+919415551786">+91 9415551786</a></li>
+		<li><a href="tel:+919415551786">0522-4044678</a></li>
+        <li><a href="mailto:farantoursandtravels@gmail.com">farantoursandtravels@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=173/35+Nadwa+Building+Aminabad+Lucknow" target="_blank">173/35, Aminabad, Lucknow</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 <span>Faran Tours & Travels</span>. All rights reserved.</div>
+    <div>Trusted Since <span>1980</span> · Lucknow, UP</div>
+  </div>
+</footer>
+<button id="goToTopBtn" onclick="scrollToTop()" title="Go to top">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; display: block;">
+    <path d="M12 19L12 5M12 5L5 12M12 5L19 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script>
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,0.3)':'none';});
+const topBtn = document.getElementById("goToTopBtn");
+
+window.addEventListener("scroll", () => {
+  // Page ki total scrollable height calculate karne ke liye formula
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  
+  // Jab banda 80% se zyada scroll karke bottom ki taraf chala jaye
+  if (totalHeight > 0 && (window.scrollY / totalHeight) >= 0.8) {
+    topBtn.classList.add("visible");
+  } else {
+    topBtn.classList.remove("visible");
+  }
+});
+
+// Smooth scroll to top logic
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+</body>
+</html>

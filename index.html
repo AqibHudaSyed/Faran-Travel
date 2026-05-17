@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faran Tours & Travels - Hajj, Umrah & Travel Services | Lucknow</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{--navy:#0d1f3c;--navy-light:#162b52;--gold:#c9963a;--gold-light:#e8b84b;--off-white:#f8f5f0;--text-dark:#1a1a2e;--text-muted:#6b7280;--green:#1a6b3a;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,31,60,0.97);backdrop-filter:blur(10px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:2px solid rgba(201,150,58,0.3);}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:contain;flex-shrink:0;background:white;padding:4px;box-shadow:0 0 0 2px rgba(201,150,58,0.4);}
+.logo-text strong{display:block;font-family:'Playfair Display',serif;font-size:16px;color:var(--gold-light);}
+.logo-text span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light);}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 20px;border-radius:4px;font-weight:600!important;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:white;border-radius:2px;}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 50%,var(--navy-light) 100%);display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero-bg-img{position:absolute;top:0;right:0;width:55%;height:100%;object-fit:cover;object-position:center;opacity:0.45;pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(180deg,transparent,var(--off-white));}
+.hero-glow{position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,150,58,0.15) 0%,transparent 70%);border-radius:50%;}
+.hero-content{position:relative;z-index:2;max-width:650px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,150,58,0.2);border:1px solid rgba(201,150,58,0.4);color:var(--gold-light);padding:6px 16px;border-radius:30px;font-size:13px;font-weight:500;margin-bottom:28px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:white;line-height:1.15;margin-bottom:24px;}
+.hero h1 span{color:var(--gold-light);display:block;}
+.hero p{color:rgba(255,255,255,0.75);font-size:17px;line-height:1.7;margin-bottom:40px;max-width:520px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 25px rgba(201,150,58,0.35);}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:white;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,0.4);transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold-light);}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;}
+.stat strong{display:block;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-light);}
+.stat span{font-size:13px;color:rgba(255,255,255,0.55);}
+
+/* STRIP */
+.services-strip{background:var(--navy);padding:28px 5%;display:flex;justify-content:center;gap:clamp(20px,4vw,60px);flex-wrap:wrap;border-bottom:3px solid var(--gold);}
+.strip-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;font-weight:500;}
+.strip-item .icon{font-size:18px;color:var(--gold);}
+
+/* SECTIONS */
+section{padding:80px 5%;}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
+.section-subtitle{color:var(--text-muted);font-size:16px;line-height:1.7;max-width:560px;}
+.section-header{margin-bottom:52px;}
+
+/* PACKAGES */
+#packages-preview{background:var(--off-white);}
+.packages-preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.pkg-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);border:1px solid rgba(201,150,58,0.15);transition:transform 0.3s,box-shadow 0.3s;}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.12);}
+.pkg-header{padding:28px;position:relative;overflow:hidden;}
+.pkg-header.navy{background:linear-gradient(135deg,var(--navy),var(--navy-light));}
+.pkg-header.green{background:linear-gradient(135deg,#1a6b3a,#0f4a28);}
+.pkg-header.red{background:linear-gradient(135deg,#8B1A1A,#5c1010);}
+.pkg-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:12px;}
+.pkg-header h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:white;margin-bottom:4px;}
+.pkg-header p{color:rgba(255,255,255,0.65);font-size:13px;}
+.pkg-body{padding:24px;}
+.pkg-price{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.pkg-price small{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text-muted);font-weight:400;}
+.pkg-features{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:8px;}
+.pkg-features li{display:flex;align-items:center;gap:8px;font-size:13px;}
+.pkg-features li::before{content:'✓';width:18px;height:18px;background:rgba(26,107,58,0.12);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.pkg-cta{width:100%;background:var(--navy);color:white;padding:12px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;text-align:center;display:block;transition:all 0.25s;}
+.pkg-cta:hover{background:var(--gold);color:var(--navy);}
+.pkg-cta.gold{background:var(--gold);color:var(--navy);}
+.pkg-cta.gold:hover{background:var(--gold-light);}
+.view-all{text-align:center;margin-top:40px;}
+
+/* WHY US */
+#why-us{background:white;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;}
+.why-card{padding:32px 24px;border:1px solid rgba(201,150,58,0.2);border-radius:12px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden;}
+.why-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transition:transform 0.3s;}
+.why-card:hover{box-shadow:0 8px 30px rgba(0,0,0,0.09);transform:translateY(-4px);}
+.why-card:hover::before{transform:scaleX(1);}
+.why-card .wicon{font-size:44px;margin-bottom:16px;display:block;}
+.why-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.why-card p{font-size:13px;color:var(--text-muted);line-height:1.65;}
+
+/* REVIEWS */
+#reviews{background:var(--navy);position:relative;overflow:hidden;}
+#reviews::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 0l8.66 15H21.34L30 0zm0 60l-8.66-15h17.32L30 60zM0 30l15-8.66v17.32L0 30zm60 0l-15 8.66V21.34L60 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+#reviews .section-title{color:white;}
+#reviews .section-subtitle{color:rgba(255,255,255,0.6);}
+.reviews-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:40px;position:relative;z-index:2;}
+.reviews-stats{display:flex;gap:20px;flex-wrap:wrap;}
+.rev-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(201,150,58,0.25);border-radius:10px;padding:16px 24px;text-align:center;}
+.rev-stat strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold-light);}
+.rev-stat span{font-size:12px;color:rgba(255,255,255,0.55);}
+.write-review-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.25s;white-space:nowrap;}
+.write-review-btn:hover{background:var(--gold-light);transform:translateY(-2px);}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;position:relative;z-index:2;}
+.review-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,150,58,0.2);border-radius:12px;padding:24px;transition:all 0.3s;}
+.review-card:hover{background:rgba(255,255,255,0.09);transform:translateY(-3px);}
+.review-top{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.rev-avatar{width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:var(--navy);flex-shrink:0;}
+.rev-name strong{display:block;color:white;font-size:14px;font-weight:600;}
+.rev-name span{color:rgba(255,255,255,0.5);font-size:12px;}
+.rev-stars{color:#f5c518;font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.review-card p{color:rgba(255,255,255,0.75);font-size:13px;line-height:1.7;}
+.google-badge{display:flex;align-items:center;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.1);}
+.google-badge span{font-size:11px;color:rgba(255,255,255,0.4);}
+.g-dot{width:14px;height:14px;border-radius:50%;background:conic-gradient(#4285F4 0 25%,#EA4335 25% 50%,#FBBC05 50% 75%,#34A853 75%);flex-shrink:0;}
+.review-cta-wrap{text-align:center;margin-top:40px;position:relative;z-index:2;}
+.review-cta-wrap p{color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:16px;}
+
+/* FAQ */
+#faq{background:var(--off-white);}
+.faq-wrap{max-width:800px;}
+.faq-item{background:white;border:1px solid rgba(201,150,58,0.2);border-radius:10px;margin-bottom:12px;overflow:hidden;}
+.faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;color:var(--navy);transition:background 0.2s;}
+.faq-question:hover{background:rgba(201,150,58,0.05);}
+.faq-icon{font-size:20px;color:var(--gold);transition:transform 0.3s;flex-shrink:0;}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
+.faq-answer.open{max-height:200px;}
+.faq-answer p{padding:0 24px 20px;color:var(--text-muted);font-size:14px;line-height:1.7;}
+
+/* CONTACT STRIP */
+.contact-strip{background:var(--gold);padding:48px 5%;}
+.cs-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+.cs-inner h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);}
+.cs-inner p{color:rgba(13,31,60,0.75);margin-top:6px;font-size:15px;}
+.cs-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-navy{background:var(--navy);color:white;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
+.btn-navy:hover{background:var(--navy-light);transform:translateY(-2px);}
+.btn-wa{background:#25D366;color:white;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
+.btn-wa:hover{background:#1eb859;transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;border-top:3px solid var(--gold);}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.footer-brand p{font-size:14px;line-height:1.7;margin-top:16px;margin-bottom:12px;max-width:280px;}
+.tagline{font-style:italic;color:var(--gold-light);font-size:13px;margin-bottom:20px;display:block;}
+.social-links{display:flex;gap:12px;margin-top:16px;}
+.social-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.25s;}
+.social-btn.fb{background:#1877F2;color:white;}
+.social-btn.fb:hover{background:#0d6efd;}
+.social-btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}
+.social-btn.ig:hover{opacity:0.85;}
+.social-btn.yt{background:#FF0000;color:white;}
+.social-btn.yt:hover{background:#cc0000;}
+.footer-col h4{color:var(--gold-light);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid rgba(201,150,58,0.3);}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:color 0.2s;display:flex;align-items:center;gap:8px;}
+.footer-col ul li a:hover{color:var(--gold-light);}
+.footer-col ul li a::before{content:'→';font-size:12px;color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;}
+.footer-bottom span{color:var(--gold);font-weight:600;}
+
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:28px;right:28px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.5);z-index:999;animation:pulse 2s infinite;}
+.float-wa:hover{transform:scale(1.1);}
+@keyframes pulse{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.5);}50%{box-shadow:0 6px 30px rgba(37,211,102,0.8);}}
+
+@media(max-width:768px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:var(--navy);padding:24px;gap:20px;z-index:999;border-bottom:2px solid rgba(201,150,58,0.3);}
+  section{padding:60px 4%;}.hero{padding:100px 4% 80px;}.hero-stats{gap:24px;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom,.cs-inner{flex-direction:column;text-align:center;}
+  .reviews-top{flex-direction:column;}
+}
+#goToTopBtn {
+  position: fixed;
+  bottom: 95px; /* Floating WhatsApp se upar */
+  right: 28px;
+  z-index: 1000;
+  
+  /* Solid Dark Circle Look जो clear dikhega */
+  background-color: #0d1f3c; 
+  border: none;
+  width: 46px; 
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  /* 👑 ALIGNMENT FIX (Isse icon bilkul center mein lock ho jayega) */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  
+  /* Initial Hidden State */
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Jab user 80% bottom mein jayega tab ye class active hogi */
+#goToTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Hover Effect (Jab mouse upar jaye) */
+#goToTopBtn:hover {
+  background-color: #c9963a; /* Circle gold ho jayega */
+  transform: translateY(-4px) scale(1.05); /* Smooth lift effect */
+}
+
+#goToTopBtn:hover svg path {
+  stroke: #0d1f3c; /* Arrow navy blue ho jayega contrast ke liye */
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/919235011113" target="_blank" class="float-wa"><img src="whatsapp.png" alt="WhatsApp" style="width:34px;height:34px;object-fit:contain;"></a>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Faran Tours Logo" class="logo-img">
+    <div class="logo-text">
+      <strong>Faran Tours & Travels</strong>
+      <span>Travel Advisor & Tour Organiser</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <img src="kaaba.jpg" alt="" class="hero-bg-img" onerror="this.style.display='none'">
+  <div class="hero-content">
+    <div class="hero-badge">🕌 Trusted Since 1980 · Lucknow, UP</div>
+    <h1>Serving the guests of Allah with,<br><span>Honesty, Care, and Excellence.</span></h1>
+    <p>Faran Tours & Travels — your trusted partner for Hajj, Umrah, Visa Services, Passport Assistance, and complete Travel Solutions from Lucknow.</p>
+    <div class="hero-btns">
+      <a href="packages.html" class="btn-primary">🕋 View Packages</a>
+      <a href="contact.html" class="btn-secondary">📞 Contact Us</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>3000+</strong><span>Happy Customers</span></div>
+      <div class="stat"><strong>4.8★</strong><span>Google Rating</span></div>
+      <div class="stat"><strong>IATA</strong><span>Certified Agent</span></div>
+      <div class="stat"><strong>40+</strong><span>Years Experience</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="services-strip">
+  <div class="strip-item"><span class="icon">🕋</span> Hajj & Umrah</div>
+  <div class="strip-item"><span class="icon">🛂</span> Visa Services</div>
+  <div class="strip-item"><span class="icon">📘</span> Passport</div>
+  <div class="strip-item"><span class="icon">✈️</span> Air Tickets</div>
+  <div class="strip-item"><span class="icon">📜</span> Attestation</div>
+  <div class="strip-item"><span class="icon">🌍</span> Emigration</div>
+</div>
+
+<!-- PACKAGES PREVIEW -->
+<section id="packages-preview">
+  <div class="section-header">
+    <div class="section-label">Our Packages</div>
+    <h2 class="section-title">Umrah Packages 2026-27</h2>
+    <p class="section-subtitle">Carefully curated packages for a comfortable and spiritually fulfilling journey from Lucknow.</p>
+  </div>
+  <div class="packages-preview-grid">
+    <div class="pkg-card">
+      <div class="pkg-header navy"><div class="pkg-badge">Via Oman Air</div><h3>Semi Deluxe Umrah</h3><p>LKO – MCT – JED · 16/17 Days</p></div>
+      <div class="pkg-body">
+        <div class="pkg-price">Request for Pricing <small></small></div>
+        <ul class="pkg-features"><li>Umrah Visa + Kit Included</li><li>Makkah Hotel (1200-1500m)</li><li>Madinah Hotel (900-1000m)</li><li>All Meals + Zam Zam + Laundry</li></ul>
+        <a href="packages.html" class="pkg-cta">View Full Details</a>
+      </div>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-header green"><div class="pkg-badge" style="background:var(--gold-light);">⭐ Most Popular</div><h3>Deluxe Umrah</h3><p>LKO – JED – LKO · 16 Days · Direct</p></div>
+      <div class="pkg-body">
+        <div class="pkg-price">Request for Pricing <small></small></div>
+        <ul class="pkg-features"><li>Saudi Airlines – Direct Flight</li><li>Hotel 700m from Haram, Makkah</li><li>Hotel 200m from Masjid, Madinah</li><li>Full Board Buffet + Ziyarat</li></ul>
+        <a href="packages.html" class="pkg-cta gold">View Full Details</a>
+      </div>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-header red"><div class="pkg-badge">Sacred Journey</div><h3>Hajj Package</h3><p>Complete Hajj Arrangements</p></div>
+      <div class="pkg-body">
+        <div class="pkg-price" style="font-size:1.4rem;">Contact for Price</div>
+        <ul class="pkg-features"><li>Hajj Visa Processing</li><li>Direct Flights from Lucknow</li><li>Mina & Arafat Arrangements</li><li>Full Guided Support</li></ul>
+        <a href="packages.html" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="view-all"><a href="packages.html" class="btn-primary">View All Packages & Departure Dates ✈️</a></div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why-us">
+  <div class="section-header">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">The Faran Difference</h2>
+    <p class="section-subtitle">40+ years of experience, 3000+ happy customers, and a commitment to making every journey perfect.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><span class="wicon">📞</span><h3>24/7 Customer Service</h3><p>Our team is always ready and available to assist with all queries before, during, and after your journey.</p></div>
+    <div class="why-card"><span class="wicon">🚌</span><h3>Luxury Transfers</h3><p>AC bus facilities for all Ziyarat and transfers throughout Saudi Arabia during Umrah and Hajj.</p></div>
+    <div class="why-card"><span class="wicon">🍽️</span><h3>Buffet Style Dining</h3><p>Freshly prepared full board buffet meals — breakfast, lunch and dinner included in all packages.</p></div>
+    <div class="why-card"><span class="wicon">💰</span><h3>Value for Money</h3><p>Packages meticulously designed to elevate your experience while minimising cost. Best price guaranteed.</p></div>
+    <div class="why-card"><span class="wicon">👕</span><h3>Laundry Services</h3><p>Complete laundry services including washing and ironing as part of all Umrah packages.</p></div>
+    <div class="why-card"><span class="wicon">🕌</span><h3>Prime Location Hotels</h3><p>Hotels closest to Haram in Makkah (700m) and Masjid-e-Nabawi in Madinah (200m).</p></div>
+    <div class="why-card"><span class="wicon">🏆</span><h3>IATA Certified</h3><p>Officially recognized by International Air Transport Association — authentic and fully reliable.</p></div>
+    <div class="why-card"><span class="wicon">⚡</span><h3>Fast Visa Processing</h3><p>UAE Visa in 2-4 hours. Express processing available for all countries. No delays, no hassle.</p></div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section id="reviews">
+  <div style="position:relative;z-index:2;">
+    <div class="reviews-top">
+      <div>
+        <div class="section-label" style="color:var(--gold-light);">Customer Reviews</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Real reviews from real customers on Google.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;">
+        <div class="reviews-stats">
+          <div class="rev-stat"><strong>4.8 ★</strong><span>Google Rating</span></div>
+          <div class="rev-stat"><strong>100+</strong><span>Reviews</span></div>
+          <div class="rev-stat"><strong>3000+</strong><span>Customers</span></div>
+        </div>
+        <!-- ✅ GOOGLE REVIEW LINK - Click karo to Google Review page khulega -->
+        <a href="https://www.google.com/search?sca_esv=c018065cd68db856&hl=en-IN&sxsrf=ANbL-n5ihIKsvk2OQGqeSc6XcnfAWjozKw:1778798611713&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOeOXWFdFgORV7t4Di2FrTdFNcXMbM-oKYpdfv25QJF1fciX2KsVu8PLpjbAOzM2rcKUJ5Nwope8KChvWbYv9n6JGKA9EGbDB_IHyRVSgFlEkoVw4YA%3D%3D&q=Faran+Tours+And+Travels+Reviews&sa=X&ved=2ahUKEwiq-4Kb7bmUAxVWbmwGHZy6FL4Q0bkNegQIGxAI&biw=1920&bih=953&dpr=1" target="_blank" class="write-review-btn">
+          ⭐ Write a Google Review
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-top"><div class="rev-avatar">A</div><div class="rev-name"><strong>Abdullah Anwar</strong><span>2 years ago · 9 reviews</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p>It was my first experience with Faran Tours & Travels travelling to KSA for Umrah. I had an exceptional overall experience. Stay at Makkah and Madina was just at the right place, food was always up to the mark, ziyarat was taken care of for all group members. Highly recommend for first timers and families!</p>
+      <div class="google-badge"><div class="g-dot"></div><span>Verified Google Review</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><div class="rev-avatar" style="background:#e8b84b;">E</div><div class="rev-name"><strong>Eram Siddiqui</strong><span>A year ago · 2 reviews</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p>I'm super happy with the experience of my first Umrah through Faran Tours and Travels. Umar is very supportive from the starting. Entire team in Medinah and Mecca was one call away. Ziyarat was covered with AC bus, food was provided on time. Thankyou so much!</p>
+      <div class="google-badge"><div class="g-dot"></div><span>Verified Google Review</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><div class="rev-avatar" style="background:#1a6b3a;color:white;">Af</div><div class="rev-name"><strong>Affan Ali</strong><span>A year ago · Local Guide</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p>I recently had the pleasure of booking a trip with Faran Tour and Travels, and I couldn't be happier. From start to finish, the staff was incredibly friendly. Their attention to detail and proactive communication ensured all aspects of my trip were stress-free. Highly recommend!</p>
+      <div class="google-badge"><div class="g-dot"></div><span>Verified Google Review</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><div class="rev-avatar" style="background:#8B1A1A;color:white;">Ab</div><div class="rev-name"><strong>Abdul Belal Faridi</strong><span>A year ago · 5 reviews</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p>Very fast and most reliable service provided by Umar bhai for Saudi work visa stamping. I recommend to choose Faran Travel for best service. Excellent experience overall — professional and trustworthy team.</p>
+      <div class="google-badge"><div class="g-dot"></div><span>Verified Google Review</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><div class="rev-avatar" style="background:#162b52;color:white;">H</div><div class="rev-name"><strong>Hamza Khan</strong><span>A year ago · 2 reviews</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p>We had an amazing Dubai trip organised through Faran Tours and Travels. They are professionals, will assist you to plan holidays according to your needs and budget. Very reliable booking channel — I recommend this to everyone!</p>
+      <div class="google-badge"><div class="g-dot"></div><span>Verified Google Review</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-top"><div class="rev-avatar" style="background:#c9963a;color:var(--navy);">D</div><div class="rev-name"><strong>Dilawar Khan</strong><span>A year ago · 8 reviews</span></div></div>
+      <div class="rev-stars">★★★★★</div>
+      <p>Our Umrah journey in September 2024 was smooth Alhamdulillah with Faran Tours and Travels. Everything was okay as said by them, we were fully satisfied. May Allah accept our all deeds and Umrah. Aameen summa aameen.</p>
+      <div class="google-badge"><div class="g-dot"></div><span>Verified Google Review</span></div>
+    </div>
+  </div>
+
+  <div class="review-cta-wrap">
+    <p>Happy with our service? Please share your experience!</p>
+    <a href="https://www.google.com/search?sca_esv=c018065cd68db856&hl=en-IN&sxsrf=ANbL-n5ihIKsvk2OQGqeSc6XcnfAWjozKw:1778798611713&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOeOXWFdFgORV7t4Di2FrTdFNcXMbM-oKYpdfv25QJF1fciX2KsVu8PLpjbAOzM2rcKUJ5Nwope8KChvWbYv9n6JGKA9EGbDB_IHyRVSgFlEkoVw4YA%3D%3D&q=Faran+Tours+And+Travels+Reviews&sa=X&ved=2ahUKEwiq-4Kb7bmUAxVWbmwGHZy6FL4Q0bkNegQIGxAI&biw=1920&bih=953&dpr=1" target="_blank" class="write-review-btn">
+      ⭐ Leave a Google Review
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Common questions about Hajj, Umrah and our services answered.</p>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">When can Umrah be performed? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Umrah can be undertaken at any time of the year except during the Hajj season (8th–13th Dhul Hijjah). It is highly recommended in Ramadan for maximum spiritual reward.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">When is Hajj usually held? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Hajj is performed annually from the 8th to 13th of Dhul Hijjah, the last month of the Islamic calendar. The exact Gregorian dates vary each year as the Islamic calendar is lunar.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What is the difference between Hajj and Umrah? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Hajj is the fifth pillar of Islam — obligatory once in a lifetime for capable Muslims, performed on specific days. Umrah is a voluntary pilgrimage that can be performed any time of the year and carries great spiritual reward.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What documents are required for Umrah Visa? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Valid Passport (min. 6 months), recent photos, completed application, meningitis vaccination proof. Women under 45 must be accompanied by a mahram (male guardian).</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What is included in your Umrah packages? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Umrah Visa, return flights from Lucknow, hotels in Makkah & Madinah, full board buffet meals, AC bus transport for Ziyarat, Zam Zam water (5 litres), laundry services, and Umrah kit.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How early should I book my Umrah package? <span class="faq-icon">+</span></div><div class="faq-answer"><p>We recommend booking 2-3 months in advance. For Ramadan packages, book even earlier as seats fill up very quickly.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Do you offer UAE Express Visa? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Yes! UAE Instant Visa in 2-4 hours and Express Visa in 24 hours. Documents needed: Photo, Passport, Hotel Voucher, Round Trip Tickets, PAN Card.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can solo women perform Umrah? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Women above 45 can perform Umrah without a mahram in an organized group. Women below 45 must be accompanied by a mahram. Contact us for personalized guidance.</p></div></div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="cs-inner">
+    <div><h2>Ready to Plan Your Journey?</h2><p>Call us or WhatsApp — we respond immediately!</p></div>
+    <div class="cs-btns">
+      <a href="tel:+919235011113" class="btn-navy">📞 +91 9235011113</a>
+      <a href="https://wa.me/919235011113" target="_blank" class="btn-wa">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="logo.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;background:white;padding:3px;" alt="logo">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold-light);">Faran Tours & Travels</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;">TRAVEL ADVISOR & TOUR ORGANISER</div>
+        </div>
+      </div>
+      <p>Complete solution for all your travel queries. Trusted since 1980. We plan your journey, you create memories.</p>
+      <span class="tagline">"Your Journey, Our Responsibility"</span>
+      <!-- SOCIAL MEDIA LINKS -->
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/p/1KgosCVPYy/" target="_blank" class="social-btn fb">📘 Facebook</a>
+        <a href="https://www.instagram.com/farantourandtravels?utm_source=qr&igsh=MXVhaDN6ZXNlcjJ2aw%3D%3D" target="_blank" class="social-btn ig">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919235011113">+91 9235011113</a></li>
+        <li><a href="tel:+919044111170">+91 9621215786</a></li>
+        <li><a href="tel:+919415551786">+91 9415551786</a></li>
+		<li><a href="tel:+919415551786">0522-4044678</a></li>
+        <li><a href="mailto:farantoursandtravels@gmail.com">farantoursandtravels@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=173/35+Nadwa+Building+Aminabad+Lucknow" target="_blank">173/35, Aminabad, Lucknow</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 <span>Faran Tours & Travels</span>. All rights reserved.</div>
+    <div>Trusted Since <span>1980</span> · 4.8★ Google · Lucknow, UP</div>
+  </div>
+</footer>
+<button id="goToTopBtn" onclick="scrollToTop()" title="Go to top">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; display: block;">
+    <path d="M12 19L12 5M12 5L5 12M12 5L19 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script>
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,0.3)':'none';});
+function toggleFaq(el){
+  const ans=el.nextElementSibling;
+  const icon=el.querySelector('.faq-icon');
+  const open=ans.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(a=>a.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(i=>i.textContent='+');
+  if(!open){ans.classList.add('open');icon.textContent='×';}
+}
+// ✅ YEH NAYA CODE WAHAN PASTE KARIYE:
+const topBtn = document.getElementById("goToTopBtn");
+
+window.addEventListener("scroll", () => {
+  // Page ki total scrollable height calculate karne ke liye formula
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  
+  // Jab banda exact 80% (0.8) se zyada scroll karke bottom ki taraf chala jaye
+  if (totalHeight > 0 && (window.scrollY / totalHeight) >= 0.8) {
+    topBtn.classList.add("visible");
+  } else {
+    topBtn.classList.remove("visible");
+  }
+});
+
+// Smooth scroll to top logic
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+</body>
+</html>
