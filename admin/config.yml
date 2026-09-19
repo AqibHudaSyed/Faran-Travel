@@ -1,0 +1,136 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: en
+
+collections:
+  - name: "packages"
+    label: "📦 Packages"
+    label_singular: "Package"
+    folder: "_packages"
+    create: true
+    delete: true
+    slug: "{{fields.id}}"
+    identifier_field: "title"
+    fields:
+
+      - label: "Package ID (unique, no spaces)"
+        name: "id"
+        widget: "string"
+        hint: "e.g. deluxe-umrah-dec — sirf ek baar set karo, change mat karna"
+
+      - label: "Website pe dikhao?"
+        name: "active"
+        widget: "boolean"
+        default: true
+        hint: "OFF karo to package website pe nahi dikhega"
+
+      - label: "Package Title"
+        name: "title"
+        widget: "string"
+        hint: "e.g. Deluxe Umrah Package 2026-27"
+
+      - label: "Subtitle"
+        name: "subtitle"
+        widget: "string"
+        hint: "e.g. 1448 Hijri · Group Departures"
+
+      - label: "Badge Text"
+        name: "badge"
+        widget: "string"
+        hint: "e.g. ⭐ Most Popular"
+
+      - label: "Badge Color"
+        name: "badgeColor"
+        widget: "select"
+        options:
+          - { label: "Gold", value: "#e8b84b" }
+          - { label: "Dark Gold", value: "#c9963a" }
+          - { label: "Green", value: "#1a6b3a" }
+          - { label: "Dark Green", value: "#8B6914" }
+          - { label: "Red", value: "#8B1A1A" }
+        default: "#e8b84b"
+
+      - label: "Package Image (Pamphlet)"
+        name: "image"
+        widget: "image"
+        hint: "Nayi pamphlet image yahan upload karo"
+        required: false
+
+      - label: "Route"
+        name: "route"
+        widget: "string"
+        hint: "e.g. LKO → JED → LKO"
+
+      - label: "Duration"
+        name: "days"
+        widget: "string"
+        hint: "e.g. 16 Days"
+
+      - label: "Airline"
+        name: "airline"
+        widget: "string"
+        hint: "e.g. Saudi Airlines - Direct Flight"
+
+      - label: "Starting Price"
+        name: "price"
+        widget: "string"
+        hint: "e.g. ₹1,18,000"
+
+      - label: "Price Note"
+        name: "priceNote"
+        widget: "string"
+        hint: "e.g. per person (quadruple sharing)"
+        required: false
+
+      - label: "Package Includes"
+        name: "includes"
+        widget: "list"
+        hint: "Har line ek item — Add karo ya hatao"
+        field:
+          label: "Item"
+          name: "item"
+          widget: "string"
+
+      - label: "Departure Dates"
+        name: "dates"
+        widget: "list"
+        hint: "Dates table — Add karo, hatao ya edit karo"
+        required: false
+        fields:
+          - label: "Group No"
+            name: "grp"
+            widget: "string"
+            hint: "e.g. 01"
+          - label: "Departure"
+            name: "departure"
+            widget: "string"
+            hint: "e.g. 07 Dec – 21 Dec"
+          - label: "Days"
+            name: "days"
+            widget: "string"
+            hint: "e.g. 16"
+          - label: "Price"
+            name: "price"
+            widget: "string"
+            hint: "e.g. ₹1,18,000"
+          - label: "Special Label (optional)"
+            name: "special"
+            widget: "string"
+            required: false
+            hint: "e.g. Rabi-ul-Awwal Special — khali choddo agar nahi chahiye"
+
+      - label: "WhatsApp Message"
+        name: "whatsappMsg"
+        widget: "string"
+        hint: "Book karne pe WhatsApp pe ye message jayega"
+
+      - label: "Note / Disclaimer"
+        name: "note"
+        widget: "text"
+        required: false
+        hint: "Koi extra information ya disclaimer"
