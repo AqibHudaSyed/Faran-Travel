@@ -4,22 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Packages - Faran Tours & Travels | Umrah & Hajj Packages Lucknow</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230d1f3c'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' dominant-baseline='middle' dy='0.1em'>✈️</text></svg>">
+<link rel="icon" href="logo.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root{--navy:#0d1f3c;--navy-light:#162b52;--gold:#c9963a;--gold-light:#e8b84b;--off-white:#f8f5f0;--text-dark:#1a1a2e;--text-muted:#6b7280;--green:#1a6b3a;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,31,60,0.97);backdrop-filter:blur(10px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:2px solid rgba(201,150,58,0.3);}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-img{width:44px;height:44px;border-radius:50%;object-fit:contain;flex-shrink:0;background:white;padding:4px;box-shadow:0 0 0 2px rgba(201,150,58,0.4);}
-.social-links{display:flex;gap:12px;margin-top:16px;}
-.social-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.25s;}
-.social-btn.fb{background:#1877F2;color:white;}
-.social-btn.fb:hover{background:#0d6efd;}
-.social-btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}
-.social-btn.ig:hover{opacity:0.85;}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:white;padding:2px;}
 .logo-text strong{display:block;font-family:'Playfair Display',serif;font-size:16px;color:var(--gold-light);}
 .logo-text span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
 .nav-links{display:flex;gap:28px;list-style:none;}
@@ -28,57 +22,84 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,31,60,0.
 .nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 20px;border-radius:4px;font-weight:600!important;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .hamburger span{width:24px;height:2px;background:white;border-radius:2px;}
+
 .page-hero{background:linear-gradient(135deg,var(--navy),#1a3a6e);padding:120px 5% 60px;text-align:center;position:relative;overflow:hidden;}
 .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,var(--off-white));}
 .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:white;margin-bottom:16px;}
 .page-hero h1 span{color:var(--gold-light);}
 .page-hero p{color:rgba(255,255,255,0.7);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7;}
+
+/* PACKAGE SECTIONS */
 .pkg-section{padding:72px 5%;}
 .pkg-section:nth-child(odd){background:white;}
 .pkg-section:nth-child(even){background:var(--off-white);}
-.pkg-float{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.pkg-float{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
 .pkg-float.reverse{direction:rtl;}
 .pkg-float.reverse>*{direction:ltr;}
-.pkg-image{width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);position:relative;}
-.pkg-image img{width:100%;height:420px;object-fit:contain;display:block;background:#fff;}
-.pkg-img-placeholder{width:100%;height:420px;display:flex;align-items:center;justify-content:center;font-size:80px;}
-.pkg-image-badge{position:absolute;top:20px;left:20px;color:var(--navy);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:20px;}
-.pkg-image-price{position:absolute;bottom:20px;right:20px;background:rgba(13,31,60,0.92);backdrop-filter:blur(8px);color:white;padding:12px 20px;border-radius:10px;text-align:center;}
-.pkg-image-price strong{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold-light);}
-.pkg-image-price span{font-size:11px;color:rgba(255,255,255,0.6);}
+
+/* IMAGE SLIDER */
+.slider-wrap{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);}
+.slider-track{display:flex;transition:transform 0.4s ease;}
+.slide{min-width:100%;position:relative;}
+.slide img{width:100%;height:480px;object-fit:contain;background:#0d1f3c;display:block;}
+.slide-placeholder{width:100%;height:480px;display:flex;align-items:center;justify-content:center;font-size:80px;}
+.pkg-image-badge{position:absolute;top:16px;left:16px;color:var(--navy);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:20px;z-index:2;}
+.pkg-image-price{display:none;}
+
+/* Slider arrows */
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,31,60,0.7);color:white;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:18px;z-index:3;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.slider-btn:hover{background:var(--gold);color:var(--navy);}
+.slider-btn.prev{left:10px;}
+.slider-btn.next{right:10px;}
+.slider-dots{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3;}
+.slider-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;transition:background 0.2s;}
+.slider-dot.active{background:var(--gold-light);}
+
+/* Single image (no slider) */
+.single-img{border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);position:relative;}
+.single-img img{width:100%;height:480px;object-fit:contain;background:#0d1f3c;display:block;}
+
+/* CONTENT */
 .pkg-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,150,58,0.12);border:1px solid rgba(201,150,58,0.3);color:var(--gold);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:16px;}
-.pkg-content h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,2.5vw,2.4rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.pkg-content h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:12px;}
 .pkg-route{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:20px;}
-.includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+.includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;}
 .include-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dark);}
-.include-item::before{content:'✓';width:20px;height:20px;background:rgba(26,107,58,0.12);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
-.dates-section h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid rgba(201,150,58,0.3);}
-.dates-table{width:100%;border-collapse:collapse;font-size:13px;}
-.dates-table th{background:var(--navy);color:var(--gold-light);padding:8px 12px;text-align:left;font-weight:600;}
-.dates-table td{padding:8px 12px;border-bottom:1px solid rgba(201,150,58,0.1);color:var(--text-dark);}
+.include-item::before{content:'✓';width:18px;height:18px;background:rgba(26,107,58,0.12);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;}
+
+/* DATES TABLE */
+.dates-section h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid rgba(201,150,58,0.3);}
+.dates-table{width:100%;border-collapse:collapse;font-size:12px;}
+.dates-table th{background:var(--navy);color:var(--gold-light);padding:7px 10px;text-align:left;font-weight:600;}
+.dates-table td{padding:7px 10px;border-bottom:1px solid rgba(201,150,58,0.1);color:var(--text-dark);}
 .dates-table tr:hover td{background:rgba(201,150,58,0.05);}
 .price-cell{font-weight:700;color:var(--navy)!important;}
-.special-row td{background:rgba(201,150,58,0.08)!important;font-weight:600;color:var(--gold)!important;}
-.note-text{font-size:11px;color:var(--text-muted);margin-top:8px;}
-.pkg-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
-.btn-book{background:var(--gold);color:var(--navy);padding:13px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;box-shadow:0 6px 20px rgba(201,150,58,0.3);}
+.special-row td{background:rgba(201,150,58,0.1)!important;font-weight:700;color:var(--gold)!important;}
+.note-box{background:rgba(201,150,58,0.08);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--text-dark);margin-top:12px;white-space:pre-line;line-height:1.7;}
+.note-text{font-size:11px;color:var(--text-muted);margin-top:6px;}
+
+.pkg-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+.btn-book{background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;box-shadow:0 6px 20px rgba(201,150,58,0.3);}
 .btn-book:hover{background:var(--gold-light);transform:translateY(-2px);}
-.btn-call{background:var(--navy);color:white;padding:13px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
+.btn-call{background:var(--navy);color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
 .btn-call:hover{background:var(--navy-light);transform:translateY(-2px);}
+
+/* VISA */
 #visa-packages{background:var(--navy);padding:80px 5%;}
 .visa-section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:white;margin-bottom:12px;}
 .visa-section-label{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;}
 .visa-section-sub{color:rgba(255,255,255,0.6);font-size:15px;margin-bottom:40px;}
-.visa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
-.visa-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,150,58,0.2);border-radius:12px;padding:28px;transition:all 0.3s;}
+.visa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.visa-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,150,58,0.2);border-radius:12px;padding:24px;transition:all 0.3s;}
 .visa-card:hover{background:rgba(255,255,255,0.1);transform:translateY(-4px);}
-.visa-flag{font-size:36px;margin-bottom:12px;display:block;}
-.visa-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold-light);margin-bottom:8px;}
-.visa-card p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:12px;}
+.visa-flag{font-size:32px;margin-bottom:10px;display:block;}
+.visa-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);margin-bottom:6px;}
+.visa-card p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:10px;}
 .visa-feature{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;}
 .visa-feature::before{content:'⚡';}
-.visa-cta{display:block;text-align:center;background:var(--gold);color:var(--navy);padding:10px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;margin-top:16px;transition:all 0.25s;}
+.visa-cta{display:block;text-align:center;background:var(--gold);color:var(--navy);padding:9px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;margin-top:14px;transition:all 0.25s;}
 .visa-cta:hover{background:var(--gold-light);}
+
 .contact-strip{background:var(--gold);padding:48px 5%;}
 .cs-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
 .cs-inner h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);}
@@ -88,10 +109,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,31,60,0.
 .btn-navy:hover{background:var(--navy-light);}
 .btn-wa{background:#25D366;color:white;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
 .btn-wa:hover{background:#1eb859;}
+
 footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;border-top:3px solid var(--gold);}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
 .footer-brand p{font-size:14px;line-height:1.7;margin-top:16px;margin-bottom:12px;max-width:280px;}
-.tagline{font-style:italic;color:var(--gold-light);font-size:13px;}
+.tagline{font-style:italic;color:var(--gold-light);font-size:13px;display:block;}
+.social-links{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
+.social-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.25s;}
+.social-btn.fb{background:#1877F2;color:white;}.social-btn.fb:hover{background:#0d6efd;}
+.social-btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}.social-btn.ig:hover{opacity:0.85;}
 .footer-col h4{color:var(--gold-light);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid rgba(201,150,58,0.3);}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:color 0.2s;display:flex;align-items:center;gap:8px;}
@@ -101,73 +127,22 @@ footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;b
 .footer-bottom span{color:var(--gold);font-weight:600;}
 .float-wa{position:fixed;bottom:28px;right:28px;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.5);z-index:999;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.5);}50%{box-shadow:0 6px 30px rgba(37,211,102,0.8);}}
+
 @media(max-width:768px){
   .nav-links{display:none;}.hamburger{display:flex;}
   .nav-links.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:var(--navy);padding:24px;gap:20px;z-index:999;border-bottom:2px solid rgba(201,150,58,0.3);}
   .pkg-float,.pkg-float.reverse{grid-template-columns:1fr;direction:ltr;}
   .pkg-section{padding:60px 4%;}
+  .slide img,.single-img img{height:320px;}
   .footer-grid{grid-template-columns:1fr;gap:32px;}
   .footer-bottom,.cs-inner{flex-direction:column;text-align:center;}
   .includes-grid{grid-template-columns:1fr;}
-}
-#goToTopBtn {
-  position: fixed;
-  bottom: 95px; /* Floating WhatsApp se upar */
-  right: 28px;
-  z-index: 1000;
-  
-  /* Solid Dark Circle Look जो clear dikhega */
-  background-color: #0d1f3c; 
-  border: none;
-  width: 46px; 
-  height: 46px;
-  border-radius: 50%;
-  cursor: pointer;
-  
-  /* 👑 ALIGNMENT FIX (Isse icon bilkul center mein lock ho jayega) */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  
-  /* Initial Hidden State */
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.7);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Jab user 80% bottom mein jayega tab ye class active hogi */
-#goToTopBtn.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
-
-/* Hover Effect (Jab mouse upar jaye) */
-#goToTopBtn:hover {
-  background-color: #c9963a; /* Circle gold ho jayega */
-  transform: translateY(-4px) scale(1.05); /* Smooth lift effect */
-}
-
-#goToTopBtn:hover svg path {
-  stroke: #0d1f3c; /* Arrow navy blue ho jayega contrast ke liye */
-}
-
-/* Flag image ko responsive alignment dene ke liye */
-.visa-flag {
-  width: 52px; 
-  height: auto;
-  margin-bottom: 16px;
-  display: inline-block;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
 }
 </style>
 </head>
 <body>
 
-<a href="https://wa.me/919235011113" target="_blank" class="float-wa"><img src="whatsapp.png" alt="WhatsApp" style="width:34px;height:34px;object-fit:contain;"></a>
+<a href="https://wa.me/919235011113" target="_blank" class="float-wa">💬</a>
 
 <nav>
   <a href="index.html" class="logo">
@@ -191,20 +166,21 @@ footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;b
   <p>Carefully curated packages from Lucknow with direct and connecting flights, premium hotels, and complete support throughout your sacred journey.</p>
 </div>
 
-<!-- PACKAGES YAHAN AUTO RENDER HONGE packages-data.js SE -->
+<!-- PACKAGES AUTO RENDER HOGA YAHAN packages-data.js SE -->
 <div id="packages-container"></div>
 
+<!-- VISA PACKAGES -->
 <section id="visa-packages">
   <div class="visa-section-label">Visa Services</div>
   <h2 class="visa-section-title">International Visa Packages</h2>
   <p class="visa-section-sub">Fast, reliable visa processing for all major destinations.</p>
   <div class="visa-grid">
-    <div class="visa-card"><img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag" class="visa-flag"><h3>UAE Visa</h3><p>Fast, Trusted, Hassle-Free UAE visa processing.</p><div class="visa-feature">Express Visa — 24 Hours</div><div class="visa-feature">Instant Visa — 2-4 Hours</div><a href="https://wa.me/919235011113?text=I need UAE Visa" target="_blank" class="visa-cta">Apply Now</a></div>
-    <div class="visa-card"><img src="https://flagcdn.com/w40/om.png" alt="Oman Flag" class="visa-flag"><h3>Oman Visa</h3><p>10, 30 & 90 day visas. Quick genuine processing.</p><div class="visa-feature">10, 30 & 90 Days</div><a href="https://wa.me/919235011113?text=I need Oman Visa" target="_blank" class="visa-cta">Apply Now</a></div>
-    <div class="visa-card"><img src="https://flagcdn.com/w40/sa.png" alt="Saudi Arabia Flag" class="visa-flag"><h3>Saudi Arabia Visa</h3><p>Umrah, Work & Visit Visa processing.</p><div class="visa-feature">Umrah & Work Visa</div><a href="https://wa.me/919235011113?text=I need Saudi Visa" target="_blank" class="visa-cta">Apply Now</a></div>
-    <div class="visa-card"><img src="https://flagcdn.com/w40/qa.png" alt="Qatar Flag" class="visa-flag"><h3>Qatar Visa</h3><p>Tourism, business and work visa.</p><div class="visa-feature">Tourist & Business</div><a href="https://wa.me/919235011113?text=I need Qatar Visa" target="_blank" class="visa-cta">Apply Now</a></div>
-    <div class="visa-card"><img src="https://flagcdn.com/w40/kw.png" alt="Kuwait Flag" class="visa-flag"><h3>Kuwait Visa</h3><p>Visit and work visa with full support.</p><div class="visa-feature">Visit & Work Visa</div><a href="https://wa.me/919235011113?text=I need Kuwait Visa" target="_blank" class="visa-cta">Apply Now</a></div>
-    <div class="visa-card"><img src="https://flagcdn.com/w40/bh.png" alt="Bahrain Flag" class="visa-flag"><h3>Bahrain Visa</h3><p>Hassle-free Bahrain visa services.</p><div class="visa-feature">Tourist & Business</div><a href="https://wa.me/919235011113?text=I need Bahrain Visa" target="_blank" class="visa-cta">Apply Now</a></div>
+    <div class="visa-card"><span class="visa-flag">🇦🇪</span><h3>UAE Visa</h3><p>Fast, Trusted, Hassle-Free UAE visa processing.</p><div class="visa-feature">Express Visa — 24 Hours</div><div class="visa-feature">Instant Visa — 2-4 Hours</div><a href="https://wa.me/919235011113?text=I need UAE Visa" target="_blank" class="visa-cta">Apply Now</a></div>
+    <div class="visa-card"><span class="visa-flag">🇴🇲</span><h3>Oman Visa</h3><p>10, 30 & 90 day visas. Quick and genuine.</p><div class="visa-feature">10, 30 & 90 Days</div><a href="https://wa.me/919235011113?text=I need Oman Visa" target="_blank" class="visa-cta">Apply Now</a></div>
+    <div class="visa-card"><span class="visa-flag">🇸🇦</span><h3>Saudi Arabia Visa</h3><p>Umrah, Work & Visit Visa processing.</p><div class="visa-feature">Umrah & Work Visa</div><a href="https://wa.me/919235011113?text=I need Saudi Visa" target="_blank" class="visa-cta">Apply Now</a></div>
+    <div class="visa-card"><span class="visa-flag">🇶🇦</span><h3>Qatar Visa</h3><p>Tourism, business and work visa.</p><div class="visa-feature">Tourist & Business</div><a href="https://wa.me/919235011113?text=I need Qatar Visa" target="_blank" class="visa-cta">Apply Now</a></div>
+    <div class="visa-card"><span class="visa-flag">🇰🇼</span><h3>Kuwait Visa</h3><p>Visit and work visa with full support.</p><div class="visa-feature">Visit & Work Visa</div><a href="https://wa.me/919235011113?text=I need Kuwait Visa" target="_blank" class="visa-cta">Apply Now</a></div>
+    <div class="visa-card"><span class="visa-flag">🇧🇭</span><h3>Bahrain Visa</h3><p>Hassle-free Bahrain visa services.</p><div class="visa-feature">Tourist & Business</div><a href="https://wa.me/919235011113?text=I need Bahrain Visa" target="_blank" class="visa-cta">Apply Now</a></div>
   </div>
 </section>
 
@@ -222,7 +198,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;b
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="display:flex;align-items:center;gap:12px;">
-        <img src="logo.png" style="width:48px;height:48px;border-radius:50%;object-fit:contain;background:white;padding:4px;box-shadow:0 0 0 2px rgba(201,150,58,0.4);" alt="logo">
+        <img src="logo.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;background:white;padding:3px;" alt="logo">
         <div>
           <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold-light);">Faran Tours & Travels</div>
           <div style="font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;">TRAVEL ADVISOR & TOUR ORGANISER</div>
@@ -230,43 +206,21 @@ footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:56px 5% 28px;b
       </div>
       <p>Complete solution for all your travel queries. Trusted since 1980.</p>
       <span class="tagline">"Your Journey, Our Responsibility"</span>
-	  <div class="social-links">
-        <a href="https://www.facebook.com/share/p/1KgosCVPYy/" target="_blank" class="social-btn fb">📘 Facebook</a>
-        <a href="https://www.instagram.com/farantourandtravels?utm_source=qr&igsh=MXVhaDN6ZXNlcjJ2aw%3D%3D" target="_blank" class="social-btn ig">📸 Instagram</a>
+      <div class="social-links">
+        <a href="https://www.facebook.com/farantoursandtravels" target="_blank" class="social-btn fb">📘 Facebook</a>
+        <a href="https://www.instagram.com/farantoursandtravels" target="_blank" class="social-btn ig">📸 Instagram</a>
       </div>
     </div>
     <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="packages.html">Packages</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919235011113">+91 9235011113</a></li><li><a href="tel:+919621215786">+91 9621215786</a></li><li><a href="tel:+919415551786">+91 9415551786</a></li><li><a href="tel:0522-4044678">0522-4044678</a></li><li><a href="mailto:farantoursandtravels@gmail.com">farantoursandtravels@gmail.com</a></li><li><a href="https://maps.google.com/?q=173/35+Nadwa+Building+Aminabad+Lucknow" target="_blank">173/35, Aminabad, Lucknow</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919235011113">+91 9235011113</a></li><li><a href="tel:+919044111170">+91 9044111170</a></li><li><a href="mailto:farantoursandtravels@gmail.com">farantoursandtravels@gmail.com</a></li><li><a href="https://maps.google.com/?q=173/35+Nadwa+Building+Aminabad+Lucknow" target="_blank">173/35, Aminabad, Lucknow</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <div>© 2026 <span>Faran Tours & Travels</span>. All rights reserved.</div>
     <div>Trusted Since <span>1980</span> · Lucknow, UP</div>
   </div>
 </footer>
-<button id="goToTopBtn" onclick="scrollToTop()" title="Go to top">
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; display: block;">
-    <path d="M12 19L12 5M12 5L5 12M12 5L19 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
 
-<!-- IMAGE VIEWER MODAL -->
-<div id="imgViewer" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);touch-action:none;">
-  <!-- Close button top right -->
-  <button onclick="closeViewer()" style="position:absolute;top:16px;right:16px;z-index:10001;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);color:white;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">✕</button>
-  <!-- Zoom controls bottom left -->
-  <div style="position:absolute;bottom:20px;left:20px;z-index:10001;display:flex;flex-direction:column;gap:8px;">
-    <button onclick="zoomBy(0.25)" style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);color:white;font-size:22px;cursor:pointer;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">+</button>
-    <button onclick="zoomBy(-0.25)" style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);color:white;font-size:26px;cursor:pointer;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">−</button>
-  </div>
-  <!-- Reset button bottom right -->
-  <button onclick="resetViewer()" style="position:absolute;bottom:20px;right:20px;z-index:10001;padding:10px 20px;border-radius:8px;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);color:white;font-size:13px;font-weight:700;cursor:pointer;backdrop-filter:blur(6px);letter-spacing:0.5px;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">⟳ Reset</button>
-  <!-- Image container -->
-  <div id="viewerCanvas" style="width:100%;height:100%;overflow:hidden;position:relative;cursor:grab;">
-    <img id="viewerImg" src="" alt="" style="position:absolute;transform-origin:0 0;user-select:none;-webkit-user-drag:none;max-width:none;">
-  </div>
-</div>
-
-<!-- ✅ packages-data.js PEHLE LOAD HOGI -->
+<!-- packages-data.js PEHLE LOAD HOGI -->
 <script src="packages-data.js"></script>
 
 <script>
@@ -274,144 +228,128 @@ function toggleMenu(){document.getElementById('navLinks').classList.toggle('open
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
 window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,0.3)':'none';});
 
-/* ===== IMAGE VIEWER ===== */
-let vScale=1, vX=0, vY=0;
-let isDragging=false, dragStartX=0, dragStartY=0, dragOriginX=0, dragOriginY=0;
-let pinchDist=0;
-const viewer=()=>document.getElementById('imgViewer');
-const canvas=()=>document.getElementById('viewerCanvas');
-const img=()=>document.getElementById('viewerImg');
-
-function openViewer(src){
-  const v=viewer(), c=canvas(), im=img();
-  im.src=src;
-  v.style.display='block';
-  document.body.style.overflow='hidden';
-  im.onload=()=>{ resetViewer(); };
-}
-function closeViewer(){
-  viewer().style.display='none';
-  document.body.style.overflow='';
-}
-function applyTransform(){
-  img().style.transform=`translate(${vX}px,${vY}px) scale(${vScale})`;
-}
-function resetViewer(){
-  const c=canvas(), im=img();
-  const cw=c.clientWidth, ch=c.clientHeight;
-  const iw=im.naturalWidth, ih=im.naturalHeight;
-  const fitScale=Math.min(cw/iw, ch/ih, 1);
-  vScale=fitScale;
-  vX=(cw - iw*fitScale)/2;
-  vY=(ch - ih*fitScale)/2;
-  applyTransform();
-}
-function zoomBy(delta, cx, cy){
-  const c=canvas(), im=img();
-  if(cx===undefined) cx=c.clientWidth/2;
-  if(cy===undefined) cy=c.clientHeight/2;
-  const newScale=Math.min(Math.max(vScale+delta*vScale, 0.3), 8);
-  const ratio=newScale/vScale;
-  vX=cx-(cx-vX)*ratio;
-  vY=cy-(cy-vY)*ratio;
-  vScale=newScale;
-  applyTransform();
-}
-
-// Mouse wheel zoom (zoom at cursor position)
-viewer().addEventListener('wheel',e=>{
-  e.preventDefault();
-  const rect=canvas().getBoundingClientRect();
-  const cx=e.clientX-rect.left, cy=e.clientY-rect.top;
-  zoomBy(e.deltaY<0?0.15:-0.15, cx, cy);
-},{passive:false});
-
-// Mouse drag
-canvas().addEventListener('mousedown',e=>{
-  isDragging=true; dragStartX=e.clientX; dragStartY=e.clientY;
-  dragOriginX=vX; dragOriginY=vY;
-  canvas().style.cursor='grabbing';
-});
-window.addEventListener('mousemove',e=>{
-  if(!isDragging) return;
-  vX=dragOriginX+(e.clientX-dragStartX);
-  vY=dragOriginY+(e.clientY-dragStartY);
-  applyTransform();
-});
-window.addEventListener('mouseup',()=>{isDragging=false; canvas().style.cursor='grab';});
-
-// Touch: drag + pinch zoom
-canvas().addEventListener('touchstart',e=>{
-  if(e.touches.length===1){
-    isDragging=true;
-    dragStartX=e.touches[0].clientX; dragStartY=e.touches[0].clientY;
-    dragOriginX=vX; dragOriginY=vY;
-  } else if(e.touches.length===2){
-    isDragging=false;
-    pinchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
+// =============================================
+// IMAGE SLIDER LOGIC
+// =============================================
+function createSlider(images, badge, badgeColor, price, priceNote, fallbackEmoji, fallbackBg, pkgId) {
+  if (!images || images.length === 0) {
+    return `<div class="single-img">
+      <div class="slide-placeholder" style="background:${fallbackBg};">${fallbackEmoji}</div>
+      <div class="pkg-image-badge" style="background:${badgeColor};">${badge}</div>
+      <div class="pkg-image-price"><strong>${price}</strong><span>${priceNote}</span></div>
+    </div>`;
   }
-},{passive:true});
-canvas().addEventListener('touchmove',e=>{
-  e.preventDefault();
-  if(e.touches.length===1 && isDragging){
-    vX=dragOriginX+(e.touches[0].clientX-dragStartX);
-    vY=dragOriginY+(e.touches[0].clientY-dragStartY);
-    applyTransform();
-  } else if(e.touches.length===2){
-    const newDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
-    const midX=(e.touches[0].clientX+e.touches[1].clientX)/2;
-    const midY=(e.touches[0].clientY+e.touches[1].clientY)/2;
-    const rect=canvas().getBoundingClientRect();
-    zoomBy((newDist-pinchDist)/200, midX-rect.left, midY-rect.top);
-    pinchDist=newDist;
+
+  if (images.length === 1) {
+    return `<div class="single-img">
+      <img src="${images[0]}" alt="Package" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="slide-placeholder" style="background:${fallbackBg};display:none;">${fallbackEmoji}</div>
+      <div class="pkg-image-badge" style="background:${badgeColor};">${badge}</div>
+      <div class="pkg-image-price"><strong>${price}</strong><span>${priceNote}</span></div>
+    </div>`;
   }
-},{passive:false});
-canvas().addEventListener('touchend',e=>{if(e.touches.length<1) isDragging=false;},{passive:true});
 
-// ESC to close
-document.addEventListener('keydown',e=>{if(e.key==='Escape') closeViewer();});
+  // Multiple images — slider
+  const slides = images.map((img, i) => `
+    <div class="slide">
+      <img src="${img}" alt="Package ${i+1}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="slide-placeholder" style="background:${fallbackBg};display:none;">${fallbackEmoji}</div>
+    </div>`).join('');
 
-/* ===== RENDER PACKAGES ===== */
-function renderPackages(){
-  const container=document.getElementById('packages-container');
-  if(!container||typeof PACKAGES==='undefined'){
-    container.innerHTML='<div style="padding:60px;text-align:center;color:red;">packages-data.js load nahi hui — dono files Netlify pe upload karo!</div>';
+  const dots = images.map((_, i) => `<div class="slider-dot ${i===0?'active':''}" onclick="goToSlide('${pkgId}',${i})"></div>`).join('');
+
+  return `<div class="slider-wrap" id="slider-${pkgId}">
+    <div class="slider-track" id="track-${pkgId}">${slides}</div>
+    <button class="slider-btn prev" onclick="slideChange('${pkgId}',-1)">‹</button>
+    <button class="slider-btn next" onclick="slideChange('${pkgId}',1)">›</button>
+    <div class="slider-dots" id="dots-${pkgId}">${dots}</div>
+    <div class="pkg-image-badge" style="background:${badgeColor};">${badge}</div>
+    <div class="pkg-image-price"><strong>${price}</strong><span>${priceNote}</span></div>
+  </div>`;
+}
+
+const sliderState = {};
+
+function slideChange(id, dir) {
+  if (!sliderState[id]) sliderState[id] = { idx: 0 };
+  const track = document.getElementById('track-' + id);
+  const dots = document.querySelectorAll('#dots-' + id + ' .slider-dot');
+  const total = track.children.length;
+  sliderState[id].idx = (sliderState[id].idx + dir + total) % total;
+  track.style.transform = `translateX(-${sliderState[id].idx * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === sliderState[id].idx));
+}
+
+function goToSlide(id, idx) {
+  if (!sliderState[id]) sliderState[id] = { idx: 0 };
+  sliderState[id].idx = idx;
+  const track = document.getElementById('track-' + id);
+  const dots = document.querySelectorAll('#dots-' + id + ' .slider-dot');
+  track.style.transform = `translateX(-${idx * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+// Touch/swipe support
+function addSwipe(id) {
+  const el = document.getElementById('slider-' + id);
+  if (!el) return;
+  let startX = 0;
+  el.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive:true});
+  el.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) slideChange(id, diff > 0 ? 1 : -1);
+  }, {passive:true});
+}
+
+// =============================================
+// RENDER PACKAGES
+// =============================================
+function renderPackages() {
+  const container = document.getElementById('packages-container');
+  if (!container || typeof PACKAGES === 'undefined') {
+    container.innerHTML = '<div style="padding:60px;text-align:center;color:red;font-size:18px;">⚠️ packages-data.js load nahi hui — dono files Netlify pe upload karo!</div>';
     return;
   }
-  const active=PACKAGES.filter(p=>p.active);
-  active.forEach((pkg,i)=>{
-    const rev=i%2!==0;
-    const waMsg=encodeURIComponent(`I want to enquire about pricing for ${pkg.title}. Please share the current rates.`);
-    const imgHTML=pkg.image
-      ?`<img src="${pkg.image}" alt="${pkg.title}" style="cursor:zoom-in;" onclick="openViewer('${pkg.image}')">`
-      :`<div class="pkg-img-placeholder" style="background:${pkg.imageFallbackBg};">${pkg.imageFallbackEmoji}</div>`;
-    const incHTML=pkg.includes.map(x=>`<div class="include-item">${x}</div>`).join('');
-    let datesHTML='';
-    if(pkg.dates&&pkg.dates.length>0){
-      const rows=pkg.dates.map(d=>{
-        if(d.special){
-          return `<tr class="special-row"><td colspan="4">${d.special}</td><td class="price-cell">📞 Request</td></tr>
-                  <tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.arrival}</td><td>${d.days}</td><td class="price-cell">📞 Request</td></tr>`;
+
+  const active = PACKAGES.filter(p => p.active);
+
+  active.forEach((pkg, i) => {
+    const rev = i % 2 !== 0;
+    const images = pkg.images || (pkg.image ? [pkg.image] : []);
+
+    const sliderHTML = createSlider(
+      images, pkg.badge, pkg.badgeColor,
+      pkg.price, pkg.priceNote,
+      pkg.imageFallbackEmoji, pkg.imageFallbackBg, pkg.id
+    );
+
+    const incHTML = pkg.includes.map(x => `<div class="include-item">${x}</div>`).join('');
+
+    let datesHTML = '';
+    if (pkg.dates && pkg.dates.length > 0) {
+      const rows = pkg.dates.map(d => {
+        if (d.special) {
+          return `<tr class="special-row"><td colspan="4">${d.special}</td><td class="price-cell">${d.price}</td></tr>
+                  <tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.arrival}</td><td>${d.days}</td><td class="price-cell">${d.price}</td></tr>`;
         }
-        return `<tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.arrival}</td><td>${d.days}</td><td class="price-cell">📞 Request</td></tr>`;
+        return `<tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.arrival}</td><td>${d.days}</td><td class="price-cell">${d.price}</td></tr>`;
       }).join('');
-      datesHTML=`<div class="dates-section"><h4>📅 Available Departure Dates</h4><table class="dates-table"><tr><th>Grp</th><th>Departure</th><th>Arrival</th><th>Days</th><th>Rate</th></tr>${rows}</table><p class="note-text">*${pkg.note}</p></div>`;
-    } else if(pkg.note){
-      datesHTML=`<p style="background:rgba(201,150,58,0.1);border-left:3px solid var(--gold);padding:16px;border-radius:0 8px 8px 0;font-size:14px;margin-top:8px;">${pkg.note}</p>`;
+      datesHTML = `<div class="dates-section">
+        <h4>📅 Available Departure Dates</h4>
+        <table class="dates-table">
+          <tr><th>Grp</th><th>Departure</th><th>Arrival</th><th>Days</th><th>Rate</th></tr>
+          ${rows}
+        </table>
+        <p class="note-text">*${pkg.note}</p>
+      </div>`;
+    } else if (pkg.note) {
+      datesHTML = `<div class="note-box">${pkg.note}</div>`;
     }
-    container.innerHTML+=`
+
+    container.innerHTML += `
     <div class="pkg-section">
-      <div class="pkg-float ${rev?'reverse':''}">
-        <div>
-          <div class="pkg-image">
-            ${imgHTML}
-            <div class="pkg-image-badge" style="background:${pkg.badgeColor};">${pkg.badge}</div>
-            <a href="https://wa.me/919235011113?text=${waMsg}" target="_blank" class="pkg-image-price" style="text-decoration:none;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-              <strong style="color:var(--gold-light);">💬 Request for Pricing</strong>
-              <span>${pkg.priceNote}</span>
-            </a>
-          </div>
-        </div>
+      <div class="pkg-float ${rev ? 'reverse' : ''}">
+        <div>${sliderHTML}</div>
         <div class="pkg-content">
           <div class="pkg-tag">🛫 ${pkg.airline}</div>
           <h2>${pkg.title}</h2>
@@ -426,29 +364,15 @@ function renderPackages(){
       </div>
     </div>`;
   });
-}
-renderPackages();
-const topBtn = document.getElementById("goToTopBtn");
 
-window.addEventListener("scroll", () => {
-  // Page ki total scrollable height calculate karne ke liye formula
-  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-  
-  // Jab banda 80% se zyada scroll karke bottom ki taraf chala jaye
-  if (totalHeight > 0 && (window.scrollY / totalHeight) >= 0.8) {
-    topBtn.classList.add("visible");
-  } else {
-    topBtn.classList.remove("visible");
-  }
-});
-
-// Smooth scroll to top logic
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  // Add swipe to all sliders
+  active.forEach(pkg => {
+    const images = pkg.images || (pkg.image ? [pkg.image] : []);
+    if (images.length > 1) addSwipe(pkg.id);
   });
 }
+
+renderPackages();
 </script>
 </body>
 </html>
