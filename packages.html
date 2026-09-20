@@ -390,12 +390,12 @@ function renderPackages(){
     if(pkg.dates&&pkg.dates.length>0){
       const rows=pkg.dates.map(d=>{
         if(d.special){
-          return `<tr class="special-row"><td colspan="4">${d.special}</td></tr>
-                  <tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.arrival}</td><td>${d.days}</td></tr>`;
+          return `<tr class="special-row"><td colspan="3">${d.special}</td><td class="price-cell">${d.price||'—'}</td></tr>
+                  <tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.days}</td><td class="price-cell">${d.price||'—'}</td></tr>`;
         }
-        return `<tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.arrival}</td><td>${d.days}</td></tr>`;
+        return `<tr><td>${d.grp}</td><td>${d.departure}</td><td>${d.days}</td><td class="price-cell">${d.price||'—'}</td></tr>`;
       }).join('');
-      datesHTML=`<div class="dates-section"><h4>📅 Available Departure Dates</h4><table class="dates-table"><tr><th>Grp</th><th>Departure</th><th>Arrival</th><th>Days</th></tr>${rows}</table><p class="note-text">*${pkg.note}</p></div>`;
+      datesHTML=`<div class="dates-section"><h4>📅 Available Departure Dates</h4><table class="dates-table"><tr><th>Grp</th><th>Departure</th><th>Days</th><th>Rate</th></tr>${rows}</table><p class="note-text">*${pkg.note}</p></div>`;
     } else if(pkg.note){
       datesHTML=`<p style="background:rgba(201,150,58,0.1);border-left:3px solid var(--gold);padding:16px;border-radius:0 8px 8px 0;font-size:14px;margin-top:8px;">${pkg.note}</p>`;
     }
